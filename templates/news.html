@@ -1,0 +1,78 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Bitcoin: Current on Currency</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <!--Navbar, to be copied to the other sheets as well-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/"> Bitcoin: Staying Current on Currency </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/news">Bitcoin News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/history"> A Brief History </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/comparison">How it Compares</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about_the_developers">About the Developers</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <content>
+        <div class="title" style="margin-top: 2%;">
+            <h2 style="color: white; font-weight: bold; text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> Bitcoin in the News Today</h2>
+        </div>
+        <div class="news-blurb col-md-10" style="margin-left: 10%;">
+            <p style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color:white; text-align: justify;">
+                We hope you've enjoyed using our app to predict bitcoin's value using historical data. And now that you've explored the numbers, we invite you to explore the narratives behind them. When considering currnency, people's economic behaviors have a significant
+                impact. So if you're trying to invest, be sure to do your due diligence and read what people are saying in today's latest news.
+            </p>
+        </div>
+        <div class="row">
+            {% for key in rendered_articles %}
+            <div class="col-md-6" style="margin-left: 10%;">
+                <a href={{rendered_articles[key][ "link"]}} style="color: rgb(33, 252, 204); font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight:bold">{{rendered_articles[key]["title"]}}</a>
+                <p style="color: white; margin-left: 5%;"> {{rendered_articles[key]["date_published"]}}</p>
+                <hr>
+            </div>
+            {% endfor %}
+        </div>
+
+
+
+
+    </content>
+
+    <footer class="footer">
+        <p class="footer-text">Final Project for UPenn LPS Data Analysis & Visualization Bootcamp
+            <br> <text style="color: rgb(233, 219, 219)">Developers: Alex Schanne, Danny Petrella, Dave Damon, and Dylan Jean </text>
+        </p>
+    </footer>
+</body>
+
+</html>
